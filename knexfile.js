@@ -3,12 +3,13 @@
 module.exports = {
 
   development: {
+    useNullAsDefault: true, // A flag required for SQLite
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
+      filename: './data/usersDataBase.db3'
     }
   },
-  useNullAsDefault: true, // A flag required for SQLite
+  
 
   //make sure to include pool code if you are running a foreing key in you db
   pool:{
