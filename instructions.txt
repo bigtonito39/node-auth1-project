@@ -1,0 +1,21 @@
+       Get database ready
+1-step : npm init -y (this creates the package.json)
+2 step : npm add knex sqlite3
+3 step: npm install -g knex  (this is to install globally in order to be able to use the knex command which allows to use migrate and seed)
+4 step: knex init  (this will build a knexfile.js)
+5 step: in that file we only will keep development, and add the pool setup if you are using foreign key
+6 step: Update your knexfile.js..see the one in this project as an example  ..make sure to create a data folder
+7 step: run knex migrate:make create-cars-table  (this will create migrate folder with first file in it)
+8 step: once you had typed your table do knex migrate:latest to create database // make sure y ou change filename in the knexfile to your name of preference.
+9 step: if you didnt like an update(ONLY IF YOU DECIDED THATS NOT WHAT YOU WANTED TO DO, and want to reverse a chance) --Run knex migrate:rollback
+10 once you have created your db, migrations, knexfile and seeds .. make sure to create a config.js file under data as well
+
+    Get project files structure and what each file represents
+    
+0  npm install bcryptjs    
+1   create a welcome folder with welcome.js / and folders with db name on it plus dbName-router.js and dbName-Model.js
+2 the dbname-router.js file we will be creating the endpoints which will use our models
+3 the dbname-model.js file we will be creating re usuable funtions that will use sqlite3 syntax/ functionality to communicate with our db.
+4 create a folder named auth and files called auth-router.js and restricted-middleware.js
+5 the auth-router.js file you will use it for creating post request to login and register
+6. the restricted-middleware.js file you will use it to create a middleware that will restrict an user to have access to data unless they are validated
