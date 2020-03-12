@@ -9,11 +9,14 @@
 8 step: once you had typed your table do knex migrate:latest to create database // make sure y ou change filename in the knexfile to your name of preference.
 9 step: if you didnt like an update(ONLY IF YOU DECIDED THATS NOT WHAT YOU WANTED TO DO, and want to reverse a chance) --Run knex migrate:rollback
 10 once you have created your db, migrations, knexfile and seeds .. make sure to create a config.js file under data as well
+11 test database with SQlite
 
     Get project files structure and what each file represents
     
-0  npm install bcryptjs    
-1   create a welcome folder with welcome.js / and folders with db name on it plus dbName-router.js and dbName-Model.js
+0  npm install bcryptjs nodemon
+1   create a welcome folder with welcome-router.js / and folders with db name on it plus dbName-router.js and dbName-Model.js  / Create index
+1.5 create index.js file with express, helmet, welcomerouter, customized error using server use and server.listen to test your welcome enpoint using 
+npm run server to make sure basics are covered.
 2 the dbname-router.js file we will be creating the endpoints which will use our models
 3 the dbname-model.js file we will be creating re usuable funtions that will use sqlite3 syntax/ functionality to communicate with our db.
 4 create a folder named auth and files called auth-router.js and restricted-middleware.js
